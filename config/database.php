@@ -5,7 +5,7 @@ class Database{
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $db_name = "repaircar-db";
+    private $db_name = "php-api_db";
     public $conn;
 
     // get the database connection

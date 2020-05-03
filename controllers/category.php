@@ -42,8 +42,10 @@ public function read(){
             ORDER BY
                 name";
 
-    $stmt = $this->conn->prepare( $query );
-    $stmt->execute();
+    $stmt = $this->conn->query($query);
+
+    // $stmt = $this->conn->prepare( $query );
+    // $stmt->execute();
 
     return $stmt;
 }

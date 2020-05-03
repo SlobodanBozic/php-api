@@ -4,8 +4,8 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 // include database and object files
-include_once '../config/database.php';
-include_once '../objects/category.php';
+include_once '../../config/database.php';
+include_once '../../Controllers/category.php';
 
 // instantiate database and category object
 $database = new Database();
@@ -16,25 +16,28 @@ $category = new Category($db);
 
 // query categorys
 $stmt = $category->read();
-$num = $stmt->rowCount();
+$num = $stmt->num_rows;
+
+// print_r($stmt);die;
 
 // check if more than 0 record found
 if($num>0){
 
     // products array
-    $categories_arr=array();
-    $categories_arr["records"]=array();
+    $categories_arr = array();
+    $categories_arr["records"] = array();
 
     // retrieve our table contents
     // fetch() is faster than fetchAll()
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    while ($row = $stmt->fetch_assoc()){
         // extract row
         // this will make $row['name'] to
         // just $name only
         extract($row);
 
-        $category_item=array(
+        $category_item = array(
             "id" => $id,
             "name" => $name,
             "description" => html_entity_decode($description)
