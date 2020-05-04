@@ -7,7 +7,7 @@ $(document).ready(function(){
       var id = $(this).attr('data-id');
 
       // read product record based on given ID
-      $.getJSON("http://localhost/php-api/ApiEndpoint/product/read_one.php?id=" + id, function(data){
+      $.getJSON("http://localhost/php-api/api/product/read_one.php?id=" + id, function(data){
         // start html
 
         var read_one_product_html=`

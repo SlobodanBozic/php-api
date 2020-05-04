@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     // When page loads for the first time
-    showLogin();
+    // showLogin();
 
     // // when a 'read products' button was clicked
     // $(document).on('click', '.read-products-button', function(){

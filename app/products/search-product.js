@@ -7,7 +7,7 @@ $(document).ready(function(){
         var keywords = $(this).find(":input[name='keywords']").val();
 
         // get data from the api based on search keywords
-        $.getJSON("http://localhost/php-api/ApiEndpoint/product/search.php?s="
+        $.getJSON("http://localhost/php-api/api/product/search.php?s="
          + keywords, function(data){
 
             // template in products.js

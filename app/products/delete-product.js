@@ -24,8 +24,9 @@ $(document).ready(function(){
 
               // send delete request to api / remote server
               $.ajax({
-                  url: "http://localhost/php-api/ApiEndpoint/product/delete.php",
+                  url: "http://localhost/php-api/api/product/delete.php",
                   type : "POST",
+                  contentType : 'application/json',
                   dataType : 'json',
                   data : JSON.stringify({ id: product_id }),
                   success : function(result) {
