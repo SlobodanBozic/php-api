@@ -16,11 +16,9 @@ class Product{
     public $updated_at;
 
     // constructor with $db as database connection
-    public function __construct($db){
-        $this->conn = $db;
+    public function __construct($conn){
+        $this->conn = $conn;
     }
-
-
 
 // read products
 public function read(){

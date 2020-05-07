@@ -10,6 +10,7 @@ header('Content-Type: application/json');
 include_once '../../config/database.php';
 include_once '../../controllers/product.php';
 
+
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
